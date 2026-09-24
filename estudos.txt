@@ -1,0 +1,16 @@
+O nestjs é estruturado parecido com Angular, utilizando por exemplo:
+app.service.ts
+Nome da coisa, o que a coisa faz
+Como no exemplo, é o serviço do aplicativo app
+
+O app.module.ts organiza a aplicação, é o module principal de todo o projeto. Ele importa outros modules,
+aplica quais são os controllers que fazem requisições GET, POST etc e também os serviços como os providers
+O app.controller.ts é onde você divide as requisições GET, POST etc
+
+O fluxo é assim:
+Ao iniciar o método get, por exemplo, em app.controller.ts, o Nest passa pelo app.module.ts
+e vê se o método relacionado a aquela classe está em providers, e também se ele tem o @Injectable
+do nest
+
+O ValidationPipe como whitelist que limpa os dados de requisições, ou seja, propriedades que não podem estar lá,
+e o forbidNonWhitelisted lança um erro se houver uma propriedade que não deve nas requisições
